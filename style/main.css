@@ -1,0 +1,35 @@
+/**** GENERAL ****/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/**** HEADER ****/
+header {
+
+}
+
+/**** MAIN ****/
+main {
+
+}
+
+/**** RESOURCES ****/
+.resources {
+
+}
+
+/**** FOOTER ****/
+footer {
+
+}
+
+/**** MEDIA QUERIES ****/
+@media all and (max-width: 720px) {
+    
+}
