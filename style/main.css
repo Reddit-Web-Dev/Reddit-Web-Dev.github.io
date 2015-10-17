@@ -11,8 +11,7 @@ html, body {
 }
 
 body {
-  /* To fix header overriding body content. Might break mobile layout. Fix it later */
-  padding-top: 80px;
+  padding-top: 50px;
 }
 
 /**** HEADER elements ****/
@@ -21,6 +20,7 @@ header {
 
 .navbar {
   background-color: #0D2734;
+  margin-bottom: 0;
 }
 
 .nav .header-li {
@@ -38,7 +38,9 @@ header {
 }
 
 .nav .header-li .nav-text-element:hover {
-  color: #fff;
+  color: #0D2734;
+  background-color: #fff;
+  transition: all 0.15s ease-in-out;
 }
 
 .navbar-header .navbar-brand {
