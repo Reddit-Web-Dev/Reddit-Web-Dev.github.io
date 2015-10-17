@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
 
     <link rel="icon" type="image/png" href="favicon.png?v=2">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Font Awesmoe -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Roboto font -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="style/main.css">
 
@@ -17,18 +25,33 @@
 <body>
 
     <header>
-        <h1>Redit WebDev collaborative site</h1>
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="index.html">Reddit WebDev</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="header-li"><a href="https://github.com/Reddit-Web-Dev" class="nav-text-element"><i class="fa fa-github"></i> GitHub</a></li>
+                <li class="header-li"><a href="https://www.reddit.com/r/webdev" class="nav-text-element"><i class="fa fa-reddit-square"></i> /r/webdev</a></li>
+                <li class="header-li"><a href="http://reddit-webdev-slack.herokuapp.com/" class="nav-text-element"><i class="fa fa-slack"></i> Join us in slack!</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
     </header>
 
     <main role="main">
-        <section class="resources">
-            <h2>A compiled list of helpful resources</h2>
-        </section>
+
     </main>
 
+
     <footer>
-        Created with love by the /r/webdev community
     </footer>
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
     <script type="text/javascript" href="script/main.js"></script>
 
