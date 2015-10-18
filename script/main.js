@@ -22,3 +22,32 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
+/**
+* Entry function
+*/
+(function($) {
+
+   $(document).ready(initPage);
+
+})(jQuery);
+
+/**
+* Main function. Every thing relating to page initialization should go here.
+* Just attach initializing functions to the events you wish here
+*/
+function initPage() {
+  $(document).scroll(setScrollEffectHeader);
+}
+
+/**
+* Sets the smooth scrolling effect on the fixed header.
+*/
+function setScrollEffectHeader() {
+  var scroll_from_top = $(this).scrollTop();
+  if (scroll_from_top > 470) {
+    $("header .nav-container").css('opacity', '0.7');
+  } else {
+    $("header .nav-container").css('opacity', '1');
+  }
+}
