@@ -58,6 +58,7 @@ header .nav-container nav ul li a {
   font-weight: 700;
   padding: 0 20px;
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
 
 header .nav-container nav ul li a:hover {
@@ -101,7 +102,6 @@ header > section h2 {
 
 header .introBtn-lockup {
   display: flex;
-
   justify-content: space-around;
   padding: 40px 40px
 }
@@ -120,7 +120,13 @@ header .introBtn-lockup a {
   border-radius: 3px;
   font-size: 17px;
   height: 60px;
-    position: relative;
+  position: relative;
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out;
+}
+
+header .introBtn-lockup a:hover {
+  opacity: 1;
 }
 
 header .introBtn-lockup a span {
@@ -165,8 +171,23 @@ main {
 }
 
 /**** RESOURCES ****/
-.resources {
+.site-description {
+  padding-top: 250px;
+  height: 600px;
+}
 
+.site-description .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-description .container .general-col {
+  line-height: 35px;
+  padding: 30px;
+  height: 200px;
+  text-align: center;
+  font-size: 18px;
 }
 
 /**** FOOTER ****/
