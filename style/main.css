@@ -114,11 +114,34 @@ header .introBtn-lockup a {
   line-height: 60px;
   text-align: center;
   text-decoration: none;
+  overflow: hidden;
   font-weight: 700;
   color: white;
   border-radius: 3px;
   font-size: 17px;
   height: 60px;
+    position: relative;
+}
+
+header .introBtn-lockup a span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+
+header .introBtn-lockup a::before {
+  content: '\f198';
+  font-family: FontAwesome;
+  color: rgba(0,0,0,0.15);
+  font-size: 6em;
+  position: absolute;
+  left: 16px;
+  top: -1px;
+  z-index: 5;
 }
 
 header .introBtn-lockup a:last-of-type {
