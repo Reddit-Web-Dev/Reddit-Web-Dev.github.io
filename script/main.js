@@ -45,9 +45,13 @@ function initPage() {
 */
 function setScrollEffectHeader() {
   var scroll_from_top = $(this).scrollTop();
+  console.log(scroll_from_top);
   if (scroll_from_top > 470) {
     $("header .nav-container").css('opacity', '0.7');
+  } else if (scroll_from_top > 318) {
+    $("header .nav-container").css('border-bottom', '1px solid #505050 ');
   } else {
     $("header .nav-container").css('opacity', '1');
+    $("header .nav-container").css('border-bottom', '0px');
   }
 }
