@@ -120,6 +120,12 @@ header .introBtn-lockup {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+    opacity: 1;
 }
 
 .button span {
