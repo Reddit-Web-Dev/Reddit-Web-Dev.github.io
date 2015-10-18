@@ -3,9 +3,79 @@
     box-sizing: border-box;
 }
 /**** HEADER ****/
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
 header {
+  height: 750px;
+  background-color: #1e2021;
+}
+
+header .nav-container {
+  width: 100%;
+  padding: 30px 0;
+  height: 100px;
+}
+
+
+header .nav-container .center {
+  width: 61%;
+  margin: 0 auto;
+  height: 60px;
+  position: relative;
+}
+
+header .nav-container #logo {
+  float: left;
+  height: 40px;
+  margin: 10px 0;
+  width: 170px;
+  border-radius: 3px;
+  background-color: #9fa5a8;
+}
+
+header .nav-container nav {
+  float: right;
+}
+header .nav-container nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+header .nav-container nav ul li {
+  display: inline-block;
+}
+
+header .nav-container nav ul li a {
+  color: #9fa5a8;
+  display: block;
+  line-height: 60px;
+  font-weight: 700;
+  padding: 0 20px;
+  text-decoration: none;
+}
+
+header .nav-container nav ul li a:hover {
+  color: white;
+}
+
+header .nav-container nav ul li:last-child a {
+  border: 1px solid #9fa5a8;
+  padding: 0px 25px;
+  line-height: 50px;
+  margin: 5px 0;
+  border-radius: 5px;
 
 }
+
+header .nav-container nav ul li:last-child a:hover {
+  background-color: #0582c9;
+  border-color: #0582c9;
+}
+
 
 /**** MAIN ****/
 main {
