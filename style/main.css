@@ -78,8 +78,6 @@ header .nav-container nav ul li:last-child a:hover {
   border-color: #0582c9;
 }
 
-<<<<<<< HEAD
-=======
 header > section {
   flex: 2;
   display: flex;
@@ -138,7 +136,6 @@ header .image-lockup {
 
 
 
->>>>>>> upstream/initial-mockup2
 /**** MAIN ****/
 main {
 
