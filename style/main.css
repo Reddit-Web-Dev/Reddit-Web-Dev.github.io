@@ -168,6 +168,7 @@ header .image-lockup {
   height: 400;
   margin: 0 auto;
   margin-bottom: -180px;
+  box-shadow: 2px 14px 18px -16px #0B0B0B;
 }
 
 
