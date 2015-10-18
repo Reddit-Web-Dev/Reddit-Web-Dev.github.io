@@ -1,54 +1,9 @@
 /**** GENERAL ****/
 * {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
 }
-html, body {
-    width: 100%;
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-}
-
-body {
-  padding-top: 50px;
-}
-
-/**** HEADER elements ****/
+/**** HEADER ****/
 header {
-}
-
-.navbar {
-  background-color: #0D2734;
-  margin-bottom: 0;
-}
-
-.nav .header-li {
-  font-size: 17px;
-}
-
-.nav .navbar-nav {
-  margin: 0px;
-  padding: 0px;
-}
-
-.nav .header-li .nav-text-element {
-  color: #fff;
-  text-decoration: none;
-}
-
-.nav .header-li .nav-text-element:hover {
-  color: #0D2734;
-  background-color: #fff;
-  transition: all 0.15s ease-in-out;
-}
-
-.navbar-header .navbar-brand {
-  color: #fff;
-}
-
-.navbar-header .navbar-brand:hover {
-  color: #fff;
 }
 
 
@@ -59,7 +14,6 @@ main {
 
 /**** RESOURCES ****/
 .resources {
-  text-align: center;
 }
 
 /**** FOOTER ****/
