@@ -106,30 +106,23 @@ header .introBtn-lockup {
   padding: 40px 40px
 }
 
-header .introBtn-lockup a {
-  display: block;
-  background-color: #0582c9;
+.button {
   width: 220px;
-  text-transform: uppercase;
-  line-height: 60px;
-  text-align: center;
-  text-decoration: none;
+  color: white;
+  display: block;
+  font-size: 17px;
   overflow: hidden;
   font-weight: 700;
-  color: white;
-  border-radius: 3px;
-  font-size: 17px;
+  line-height: 60px;
   height: 60px;
+  border-radius: 3px;
   position: relative;
-  opacity: 0.8;
-  transition: all 0.2s ease-in-out;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
-header .introBtn-lockup a:hover {
-  opacity: 1;
-}
-
-header .introBtn-lockup a span {
+.button span {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -138,21 +131,23 @@ header .introBtn-lockup a span {
   z-index: 10;
 }
 
+.button.slack {
+  background-color: #0582c9;
+}
 
-header .introBtn-lockup a::before {
-  content: '\f198';
+.button.start {
+  border: 1px solid white;
+}
+
+.button.slack:before {
+  content: "\f198";
   font-family: FontAwesome;
-  color: rgba(0,0,0,0.15);
+  color: rgba(0,0,0,0.2);
   font-size: 6em;
   position: absolute;
   left: 16px;
-  top: -1px;
+  top: 0px;
   z-index: 5;
-}
-
-header .introBtn-lockup a:last-of-type {
-  background: none;
-  border: 1px solid white;
 }
 
 header .image-lockup {
