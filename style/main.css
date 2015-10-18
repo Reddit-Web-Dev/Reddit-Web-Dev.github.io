@@ -25,6 +25,8 @@ header .nav-container {
   background-color: #1e2021;
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
+  z-index: 1;
+  /*border-bottom: 1px solid #D0D0D0;*/
 }
 
 
