@@ -12,15 +12,17 @@
   8. `git add -A`
   9. `git commit -m "A nice message describing what you changed"`
   10. `git checkout <Branch you want to contribute>`
-  11. `git fetch upstream <Branch you want to contribute>`
   12. `git pull upstream <Branch you want to contribute>`
   13. `git merge <New Feature branch with your changes>`
   14. `git push origin <Branch you want to contribute>`
   15. Go to your GitHub account, select the branch you changed, in this case,
   `<Branch you want to contribute>`, and click open a new PR button.
 
-## Updating your fork
+## Updating the whole fork
 
-  1. `git fetch upstream branch`
+  1. `git pull upstream`
+
+## Updating your fork for a specific branch
+
+  1. `git pull upstream branch`
   2. `git checkout branch`
-  3. `git pull upstream branch`
