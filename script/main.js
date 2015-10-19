@@ -21,7 +21,7 @@ function initPage() {
 * Sets the smooth scrolling effect on the fixed header.
 */
 function setScrollEffectHeader() {
-  var $scroll_from_top = $(this).scrollTop(),
+  var scroll_from_top = $(this).scrollTop(),
     $nav_container = $("header .nav-container");
 
   console.log(scroll_from_top);
