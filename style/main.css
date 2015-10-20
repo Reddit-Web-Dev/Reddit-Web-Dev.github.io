@@ -188,6 +188,11 @@ header .image-lockup .animated-text {
   overflow: auto;
 }
 
+header .image-lockup .animated-text .code-color {
+  color: #0582C9;
+  font-weight: 800;
+}
+
 /**** MAIN ****/
 main {
 
