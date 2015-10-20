@@ -2,7 +2,7 @@
 *,
 *::before,
 *::after{
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 /**** HEADER ****/
 
@@ -79,7 +79,6 @@ header .nav-container nav ul li:last-child a {
   line-height: 50px;
   margin: 5px 0;
   border-radius: 5px;
-
 }
 
 header .nav-container nav ul li:last-child a:hover {
@@ -93,8 +92,8 @@ header > section {
   align-items: center;
   justify-content: center;
 }
-header > section  h1 {
 
+header > section  h1 {
   font-size: 35px;
   color: white;
   line-height: 65px;
@@ -133,7 +132,7 @@ header .introBtn-lockup {
 }
 
 .button:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .button span {
@@ -177,7 +176,7 @@ header .image-lockup svg {
   box-shadow: 0px 3px 0px 0px #CCC;
 }
 
-header .image-lockup .animated-text{
+header .image-lockup .animated-text {
   position: absolute;
   top: 40px;
   width: 100%;
