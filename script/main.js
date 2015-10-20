@@ -60,7 +60,7 @@ function animateCode(){
 }",
     $code_container = $(".animated-text"),
     code_words = code.split(" "),
-    code_highlight = "<span style='color: red;'></span>",
+    code_highlight = "<span class='code-color'></span>",
     code_keyWords = ["var", "function", "if", "else"],
     isColor = false
     
@@ -73,7 +73,6 @@ function animateCode(){
   setTimeout(function() { typeCharacter($code_container, (" " + code_words[code_counter]), 0, isColor, (code_words.length - 1) ); }, 40);
 }
 
-
 /**
 * Simulates the text being typed
 */
@@ -85,9 +84,6 @@ function typeCharacter($code_container, word, index, isColor, length) {
     } else {  
       clearInterval(); //stop animation
     };
-  } else if (isColor === true){
-    $code_container.append(word[index]);
-    setTimeout(function() { typeCharacter($code_container, word, ++index, isColor, length);}, 70);
   } else {
     $code_container.append(word[index]);
     setTimeout(function() { typeCharacter($code_container, word, ++index, isColor, length);}, 70);
