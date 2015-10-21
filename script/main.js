@@ -76,16 +76,16 @@ function animateCode(){
 /**
 * Simulates the text being typed
 */
-function typeCharacter($code_container, word, index, isColor, length) {
+function typeCharacter($element, word, index, isColor, length) {
   if (typeof word[index] === 'undefined') {
-    if (code_counter !== length) { //catch for special chars that could cause the animation to stop
+    if (code_counter !== length) {
       code_counter+= 1;
       animateCode();
     } else {  
       clearInterval(); //stop animation
     };
   } else {
-    $code_container.append(word[index]);
-    setTimeout(function() { typeCharacter($code_container, word, ++index, isColor, length);}, 70);
+    $element.html($element.html() + word[index]);
+    setTimeout(function() { typeCharacter($element, word, ++index, isColor, length);}, 70);
   };
 };
