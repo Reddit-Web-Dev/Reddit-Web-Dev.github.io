@@ -64,9 +64,9 @@ function animateCode(){
     code_keyWords = ['var', 'function', 'if', 'else'],
     isColor = false;
 
-    if (codeKeywords.indexOf(codeWords[codeCounter]) >= 0) {
-      $codeContainer.append(codeHighlight);
-      $codeContainer = $('.code-area span:last-child');
+    if (code_keyWords.indexOf(code_words[code_counter]) >= 0) {
+      $code_container.append(code_highlight);
+      $code_container = $('.code-area span:last-child');
       isColor = true;
     }
 
@@ -78,8 +78,8 @@ function animateCode(){
 */
 function typeCharacter($element, word, index, isColor, length) {
   if (typeof word[index] === 'undefined') {
-    if (codeCounter !== length) {
-      codeCounter++;
+    if (code_counter !== length) {
+      code_counter++;
       animateCode();
     } else {
       clearTimeout(); // Stop animation
