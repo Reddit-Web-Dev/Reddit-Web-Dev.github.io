@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Main JS file for the /r/webdev collaborative site
  */
@@ -23,7 +25,7 @@ function initPage() {
 */
 function setScrollEffectHeader() {
   var scroll_from_top = $(this).scrollTop(),
-    $nav_container = $("header .nav-container");
+    $nav_container = $('header .nav-container');
 
   if (scroll_from_top > 470) {
     $nav_container.css('opacity', '0.7');
@@ -47,30 +49,30 @@ function animateCode(){
  */\n\n\
  function setScrollEffectHeader() {\n\
     var scroll_from_top = $(this).scrollTop(),\n\
-        $nav_container = $(\"header .nav-container\");\n\n\
+        $nav_container = $('header .nav-container');\n\n\
     console.log(scroll_from_top);\n\n\
     if (scroll_from_top > 470) {\n\
         $nav_container.css('opacity', '0.7');\n\
-    }  else if (scroll_from_top > 318) {\n\
+    } else if (scroll_from_top > 318) {\n\
         $nav_container.css('border-bottom', '1px solid #505050');\n\
-    }  else {\n\
+    } else {\n\
         $nav_container.css('opacity', '1');\n\
         $nav_container.css('border-bottom', '0px');\n\
     }\n\
 }",
-    $code_container = $(".animated-text"),
-    code_words = code.split(" "),
-    code_highlight = "<span class='code-color'></span>",
-    code_keyWords = ["var", "function", "if", "else"],
-    isColor = false
-    
+    $code_container = $('.animated-text'),
+    code_words = code.split(' '),
+    code_highlight = '<span class="code-color"></span>',
+    code_keyWords = ['var', 'function', 'if', 'else'],
+    isColor = false;
+
     if (code_keyWords.indexOf(code_words[code_counter]) >= 0) {
       $code_container.append(code_highlight);
       $code_container = $('.animated-text span:last-child');
       isColor = true;
     };
 
-  setTimeout(function() { typeCharacter($code_container, (" " + code_words[code_counter]), 0, isColor, (code_words.length - 1) ); }, 40);
+  setTimeout(function() { typeCharacter($code_container, (' ' + code_words[code_counter]), 0, isColor, (code_words.length - 1) ); }, 60);
 }
 
 /**
@@ -79,13 +81,13 @@ function animateCode(){
 function typeCharacter($element, word, index, isColor, length) {
   if (typeof word[index] === 'undefined') {
     if (code_counter !== length) {
-      code_counter+= 1;
+      code_counter++;
       animateCode();
-    } else {  
-      clearInterval(); //stop animation
-    };
+    } else {
+      clearInterval(); // Stop animation
+    }
   } else {
     $element.html($element.html() + word[index]);
-    setTimeout(function() { typeCharacter($element, word, ++index, isColor, length);}, 70);
-  };
+    setTimeout(function() { typeCharacter($element, word, ++index, isColor, length);}, 60);
+  }
 };
