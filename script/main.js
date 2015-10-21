@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Main JS file for the /r/webdev collaborative site
  */
@@ -8,6 +6,7 @@
 * Entry function
 */
 (function($) {
+  'use strict';
    $(document).ready(initPage);
 })(jQuery);
 
@@ -25,13 +24,20 @@ function initPage() {
 */
 function setScrollEffectHeader() {
   var scroll_from_top = $(this).scrollTop(),
-    $nav_container = $('header .nav-container');
+      $nav_container = $('header .nav-container'),
+      nav_containerHeight = $nav_container.height(),
+      osxWindow = $(".image-lockup"),
+      limitOpacity = osxWindow.position().top - $nav_container.height() - 40;
 
-  if (scroll_from_top > 470) {
+  if (scroll_from_top > limitOpacity) {
     $nav_container.css('opacity', '0.7');
-  } else if (scroll_from_top > 318) {
+  }
+
+  if (scroll_from_top > 315) {
     $nav_container.css('border-bottom', '1px solid #505050');
-  } else {
+  }
+
+  if (scroll_from_top <= limitOpacity) {
     $nav_container.css('opacity', '1');
     $nav_container.css('border-bottom', '0px');
   }
