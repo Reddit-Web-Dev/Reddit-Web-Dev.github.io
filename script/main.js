@@ -47,25 +47,25 @@ function setScrollEffectHeader() {
 * Animates the code inside the SVG window
 */
 
+var code_counter = 1;
 function animateCode(){
     var code =
     " /** \n\
-     * Sets the smooth scrolling effect on the fixed header.\n\
-     */\n\n\
-     function setScrollEffectHeader() {\n\
-        var scroll_from_top = $(this).scrollTop(),\n\
-            $nav_container = $('header .nav-container');\n\n\
-        console.log(scroll_from_top);\n\n\
-        if (scroll_from_top > 470) {\n\
-            $nav_container.css('opacity', '0.7');\n\
-        } else if (scroll_from_top > 318) {\n\
-            $nav_container.css('border-bottom', '1px solid #505050');\n\
-        } else {\n\
-            $nav_container.css('opacity', '1');\n\
-            $nav_container.css('border-bottom', '0px');\n\
-        }\n\
-    }",
-    code_counter = 1,
+   * Sets the smooth scrolling effect on the fixed header.\n\
+   */\n\n\
+   function setScrollEffectHeader() {\n\
+      var scroll_from_top = $(this).scrollTop(),\n\
+          $nav_container = $('header .nav-container');\n\n\
+      console.log(scroll_from_top);\n\n\
+      if (scroll_from_top > 470) {\n\
+          $nav_container.css('opacity', '0.7');\n\
+      } else if (scroll_from_top > 318) {\n\
+          $nav_container.css('border-bottom', '1px solid #505050');\n\
+      } else {\n\
+          $nav_container.css('opacity', '1');\n\
+          $nav_container.css('border-bottom', '0px');\n\
+      }\n\
+  }",
     $code_container = $('.animated-text'),
     code_words = code.split(' '),
     code_highlight = '<span class="code-color"></span>',
