@@ -24,10 +24,10 @@ function initPage() {
 */
 function setScrollEffectHeader() {
   var scrollFromTop = $(this).scrollTop(),
-      $navContainer = $('header .nav-container'),
-      navContainerHeight = $navContainer.height(),
-      osxWindow = $(".osx-window"),
-      limitOpacity = osxWindow.position().top - navContainerHeight - 40;
+    $navContainer = $('header .nav-container'),
+    navContainerHeight = $navContainer.height(),
+    osxWindow = $(".osx-window"),
+    limitOpacity = osxWindow.position().top - navContainerHeight - 40;
 
   if (scrollFromTop > limitOpacity) {
     $navContainer.addClass('transparent');
@@ -39,38 +39,42 @@ function setScrollEffectHeader() {
 /**
 * Animates the code inside the SVG window
 */
-var code_counter = 1;
+var codeCounter = 1;
+
 function animateCode(){
-    var code =
-    " /** \n\
-   * Sets the smooth scrolling effect on the fixed header.\n\
-   */\n\n\
-   function setScrollEffectHeader() {\n\
-      var scroll_from_top = $(this).scrollTop(),\n\
-          $nav_container = $('header .nav-container');\n\n\
-      console.log(scroll_from_top);\n\n\
-      if (scroll_from_top > 470) {\n\
-          $nav_container.css('opacity', '0.7');\n\
-      } else if (scroll_from_top > 318) {\n\
-          $nav_container.css('border-bottom', '1px solid #505050');\n\
-      } else {\n\
-          $nav_container.css('opacity', '1');\n\
-          $nav_container.css('border-bottom', '0px');\n\
-      }\n\
-  }",
-    $code_container = $('.code-area'),
-    code_words = code.split(' '),
-    code_highlight = '<span class="code-color"></span>',
-    code_keyWords = ['var', 'function', 'if', 'else'],
-    isColor = false;
+  /*jshint multistr: true */
+  var code =
+" /** \n\
+ * Sets the smooth scrolling effect on the fixed header.\n\
+ */\n\n\
+function setScrollEffectHeader() {\n\
+    var scrollFromTop = $(this).scrollTop(),\n\
+        $navContainer = $('header .nav-container');\n\n\
+    console.log(scrollFromTop);\n\n\
+    if (scrollFromTop > 470) {\n\
+        $navContainer.css('opacity', '0.7');\n\
+    } else if (scrollFromTop > 318) {\n\
+        $navContainer.css('border-bottom', '1px solid #505050');\n\
+    } else {\n\
+        $navContainer.css('opacity', '1');\n\
+        $navContainer.css('border-bottom', '0px');\n\
+    }\n\
+}",
+  $codeContainer = $('.code-area'),
+  codeWords = code.split(' '),
+  codeHighlight = '<span class="code-color"></span>',
+  codeKeywords = ['var', 'function', 'if', 'else'],
+  isColor = false;
 
-    if (code_keyWords.indexOf(code_words[code_counter]) >= 0) {
-      $code_container.append(code_highlight);
-      $code_container = $('.code-area span:last-child');
-      isColor = true;
-    }
+  if (codeKeywords.indexOf(codeWords[codeCounter]) >= 0) {
+    $codeContainer.append(codeHighlight);
+    $codeContainer = $('.code-area span:last-child');
+    isColor = true;
+  }
 
-  setTimeout(function() {typeCharacter($code_container, (' ' + code_words[code_counter]), 0, isColor, (code_words.length - 1) ); }, 50);
+  setTimeout(function() {
+    typeCharacter($codeContainer, (' ' + codeWords[codeCounter]), 0, isColor, (codeWords.length - 1));
+  }, 50);
 }
 
 /**
@@ -78,14 +82,16 @@ function animateCode(){
 */
 function typeCharacter($element, word, index, isColor, length) {
   if (typeof word[index] === 'undefined') {
-    if (code_counter !== length) {
-      code_counter++;
+    if (codeCounter !== length) {
+      codeCounter++;
       animateCode();
     } else {
       clearTimeout(); // Stop animation
     }
   } else {
     $element.html($element.html() + word[index]);
-    setTimeout(function() { typeCharacter($element, word, ++index, isColor, length);}, 50);
+    setTimeout(function() {
+      typeCharacter($element, word, ++index, isColor, length);
+    }, 50);
   }
 }
