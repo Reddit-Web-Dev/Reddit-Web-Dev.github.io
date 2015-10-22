@@ -1,13 +1,25 @@
 # Reddit-Web-Dev – Coding style guidelines
 
 #### GENERAL
-- Indent your code with **2 spaces**
+- Indent your code with **4 spaces**
 
 #### HTML
 - Attribute values go inside double quotes `attribute="value"`
 
 #### CSS
 - Class and id names `use-hyphens`
+
+- Prefer with single quotes `'` over double quotes `"`
+
+- Always have a single space between the colon and the value: `color: red;`
+
+- Omit the units if a value is `0`
+
+- Colors:
+    - `#hex` values are preferred over `rgb()` or `hsl()`
+    - UPPERCASE is preferred over lowercase (`#BADA55` over `#bada55`)
+    - Long form is preferred for consistency (`#666666` over `#666`)
+    - When using rgba (and similar) have a space after each comma `rgba(0, 0, 0, 0.5)`
 
 #### JS
 - Use [jshint](http://jshint.com/)
