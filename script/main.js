@@ -42,24 +42,22 @@ function setScrollEffectHeader() {
 var codeCounter = 1;
 
 function animateCode(){
-  /*jshint multistr: true */
-  var code =
-" /** \n\
- * Sets the smooth scrolling effect on the fixed header.\n\
- */\n\n\
-function setScrollEffectHeader() {\n\
-    var scrollFromTop = $(this).scrollTop(),\n\
-        $navContainer = $('header .nav-container');\n\n\
-    console.log(scrollFromTop);\n\n\
-    if (scrollFromTop > 470) {\n\
-        $navContainer.css('opacity', '0.7');\n\
-    } else if (scrollFromTop > 318) {\n\
-        $navContainer.css('border-bottom', '1px solid #505050');\n\
-    } else {\n\
-        $navContainer.css('opacity', '1');\n\
-        $navContainer.css('border-bottom', '0px');\n\
-    }\n\
-}",
+  var code = " /** \n" +
+  " * Sets the smooth scrolling effect on the fixed header.\n" +
+  " */\n\n" +
+  "function setScrollEffectHeader() {\n" +
+  "  var scrollFromTop = $(this).scrollTop(),\n" +
+  "  $navContainer = $('header .nav-container');\n\n" +
+  "  console.log(scrollFromTop);\n\n" +
+  "  if (scrollFromTop > 470) {\n" +
+  "    $navContainer.css('opacity', '0.7');\n" +
+  "  } else if (scrollFromTop > 318) {\n" +
+  "    $navContainer.css('border-bottom', '1px solid #505050');\n" +
+  "  } else {\n" +
+  "    $navContainer.css('opacity', '1');\n" +
+  "    $navContainer.css('border-bottom', '0px');\n" +
+  "  }\n" +
+  "}",
   $codeContainer = $('.code-area'),
   codeWords = code.split(' '),
   codeHighlight = '<span class="code-color"></span>',

@@ -1,9 +1,11 @@
 # How to contribute
 
+Before contributing, make sure to check out the `GUIDELINES.md`
+
 ## From beginning
 
   1. Fork the repo to your GitHub account
-  2. Clone the repo to your local machine
+  2. Clone the forked repo to your local machine
   3. Assuming you already have the repo in your local pc:
   4. `git remote add upstream https://github.com/Reddit-Web-Dev/Reddit-Web-Dev.github.io.git`
   5. `git fetch upstream`
@@ -24,5 +26,5 @@
 
 ## Updating your fork for a specific branch
 
-  1. `git pull upstream branch`
-  2. `git checkout branch`
+  1. `git pull upstream <Specific branch>`
+  2. `git checkout <Specific branch>`
