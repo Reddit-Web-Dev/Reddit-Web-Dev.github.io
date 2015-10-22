@@ -9,9 +9,10 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
+  background-color: #F6F6F6;
 }
 
-header {
+body > header {
   display: flex;
   flex-direction: column;
   height: 750px;
@@ -125,7 +126,7 @@ header .introBtn-lockup {
   font-size: 17px;
   overflow: hidden;
   font-weight: 700;
-  line-height: 60px;
+  line-height: 58px;
   height: 60px;
   border-radius: 3px;
   position: relative;
@@ -252,6 +253,80 @@ main {
   height: 200px;
   text-align: center;
   font-size: 18px;
+}
+
+/**** DEVELOPER PROFILES ****/
+
+.profile-wrapper {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.profile-wrapper > li {
+  width: 370px;
+  min-height: 640px;
+  margin: 20px;
+  padding: 50px 40px 160px 40px;;
+  background: white;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  box-shadow: 0px 2px 0px 0px rgba(201, 201, 201, 0.52);
+}
+
+.profile-wrapper > li header h2 {
+  margin: 35px 0;
+  font-weight: 600;
+  font-size: 1.25em;
+  text-transform: uppercase;
+}
+
+.profile-wrapper > li footer .button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 50px;
+}
+
+.profile-wrapper > li footer .button.learn {
+  background: none;
+  color: #CCC;
+  border: 2px solid #CCC;
+}
+
+.profile-wrapper > li footer .button.learn:hover {
+  background-color: #0582c9;
+  color: #FFF;
+  border: 2px solid #0582c9;
+}
+
+.profile-skills {
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 500;
+}
+
+.profile-skills li {
+  padding-left: 35px;
+  margin-bottom: 15px;
+  text-align: left;
+  position: relative;
+}
+
+.profile-skills li:last-child {
+  margin-bottom: 0;
+}
+
+.profile-skills li:before {
+  content: "\f00c";
+  font-family: FontAwesome;
+  font-size: 25px;
+  color: #88B838;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 /**** FOOTER ****/
