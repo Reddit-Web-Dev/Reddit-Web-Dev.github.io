@@ -27,12 +27,19 @@ function setScrollEffectHeader() {
         $navContainer = $('header .nav-container'),
         navContainerHeight = $navContainer.height(),
         osxWindow = $(".osx-window"),
-        limitOpacity = osxWindow.position().top - navContainerHeight - 40;
+        limitOpacity = osxWindow.position().top - navContainerHeight - 40,
+        devProfileTopPos = $(".developer-profile").position().top;
 
     if (scrollFromTop > limitOpacity) {
         $navContainer.addClass('transparent');
     } else {
         $navContainer.removeClass('transparent');
+    }
+
+    if (scrollFromTop > devProfileTopPos) {
+        $navContainer.slideUp(250);
+    } else {
+        $navContainer.slideDown(100);
     }
 }
 
