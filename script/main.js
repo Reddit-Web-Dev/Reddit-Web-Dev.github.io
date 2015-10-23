@@ -36,11 +36,15 @@ function setScrollEffectHeader() {
         $navContainer.removeClass('transparent');
     }
 
-    if (scrollFromTop > devProfileTopPos) {
+    /*if (scrollFromTop > devProfileTopPos) {
         $navContainer.slideUp(250);
     } else {
         $navContainer.slideDown(100);
-    }
+    }*/
+
+
+    scrollFromTop > 900 ? $navContainer.addClass('shrink') : $navContainer.removeClass('shrink');
+
 }
 
 /**
