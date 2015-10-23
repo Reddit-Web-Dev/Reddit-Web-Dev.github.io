@@ -23,7 +23,7 @@ function initPage() {
 * Sets the smooth scrolling effect on the fixed header.
 */
 function setScrollEffectHeader() {
-    var scrollFromTop = $(this).scrollTop(),
+    /*var scrollFromTop = $(this).scrollTop(),
         $navContainer = $('header .nav-container'),
         navContainerHeight = $navContainer.height(),
         osxWindow = $(".osx-window"),
@@ -36,14 +36,20 @@ function setScrollEffectHeader() {
         $navContainer.removeClass('transparent');
     }
 
-    /*if (scrollFromTop > devProfileTopPos) {
+    if (scrollFromTop > devProfileTopPos) {
         $navContainer.slideUp(250);
     } else {
         $navContainer.slideDown(100);
-    }*/
+    }
 
+    scrollFromTop > 900 ? $navContainer.addClass('shrink') : $navContainer.removeClass('shrink');*/
 
-    scrollFromTop > 900 ? $navContainer.addClass('shrink') : $navContainer.removeClass('shrink');
+    var scrollFromTop = $(this).scrollTop(),
+        $navContainer = $('.nav-container.fixed'),
+        headerHeight = $('body > header').height();
+
+        scrollFromTop > headerHeight ? $navContainer.addClass('show') : $navContainer.removeClass('show');
+
 
 }
 
