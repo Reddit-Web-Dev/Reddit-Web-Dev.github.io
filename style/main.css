@@ -19,11 +19,13 @@ body > header {
     background-color: #1E2021;
 }
 
-header .nav-container {
+/**** NAVIGATION ****/
+
+.nav-container {
     width: 100%;
     padding: 20px 0;
     //height: 100px;
-    position: fixed;
+    //position: fixed;
     top: 0;
     background-color: #1E2021;
     opacity: 1;
@@ -33,23 +35,23 @@ header .nav-container {
     z-index: 1;
 }
 
-header .nav-container.shrink {
+/*header .nav-container.shrink {
   padding: 6px;
 }
 
 header .nav-container.transparent{
     opacity: 0.7;
     border-bottom: 1px solid #505050;
-}
+}*/
 
-header .nav-container .center {
+.nav-container .center {
     width: 61%;
     margin: 0 auto;
     height: 60px;
     position: relative;
 }
 
-header .nav-container #logo {
+.nav-container #logo {
     float: left;
     height: 40px;
     margin: 10px 0;
@@ -58,19 +60,19 @@ header .nav-container #logo {
     background-color: #9FA5A8;
 }
 
-header .nav-container nav {
+.nav-container nav {
     float: right;
 }
-header .nav-container nav ul {
+.nav-container nav ul {
     padding: 0;
     margin: 0;
 }
 
-header .nav-container nav ul li {
+.nav-container nav ul li {
     display: inline-block;
 }
 
-header .nav-container nav ul li a {
+.nav-container nav ul li a {
     color: #9FA5A8;
     display: block;
     line-height: 60px;
@@ -80,11 +82,11 @@ header .nav-container nav ul li a {
     transition: all 0.2s ease-in-out;
 }
 
-header .nav-container nav ul li a:hover {
+.nav-container nav ul li a:hover {
     color: white;
 }
 
-header .nav-container nav ul li:last-child a {
+.nav-container nav ul li:last-child a {
     border: 1px solid #9FA5A8;
     padding: 0px 25px;
     line-height: 50px;
@@ -92,10 +94,49 @@ header .nav-container nav ul li:last-child a {
     border-radius: 5px;
 }
 
-header .nav-container nav ul li:last-child a:hover {
+.nav-container nav ul li:last-child a:hover {
     background-color: #0582C9;
     border-color: #0582C9;
 }
+
+/**** FIXED NAVIGATION ****/
+
+.nav-container.fixed {
+  background: #FFFFFF;
+  padding: 6px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  transform: translateY(-100px);
+}
+
+.nav-container.fixed ul li a {
+  color: #272727;
+}
+
+.nav-container.fixed ul li a:hover {
+  color: #0582C9;
+}
+
+.nav-container.fixed nav ul li:last-child a {
+    border: 1px solid #9FA5A8;
+    padding: 0px 25px;
+    line-height: 50px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.nav-container.fixed nav ul li:last-child a:hover {
+    color: white;
+}
+
+.nav-container.fixed.show {
+  transform: translateY(0);
+}
+
+/**** SECTION ****/
 
 header > section {
     flex: 2;
