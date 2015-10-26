@@ -130,6 +130,7 @@ header .nav-container.transparent{
 
 .nav-container.fixed nav ul li:last-child a:hover {
     color: white;
+    border-color: #0582C9;
 }
 
 .nav-container.fixed.show {

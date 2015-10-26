@@ -69,9 +69,11 @@ function setScrollEffectHeader() {
         $navContainer = $('.nav-container.fixed'),
         headerHeight = $('body > header').height();
 
-        scrollFromTop > headerHeight ? $navContainer.addClass('show') : $navContainer.removeClass('show');
-
-
+    if(scrollFromTop > headerHeight) {
+        $navContainer.addClass('show');
+    } else {
+        $navContainer.removeClass('show');
+    }
 }
 
 /**
@@ -79,7 +81,7 @@ function setScrollEffectHeader() {
 */
 var codeCounter = 1;
 
-function animateCode(){
+function animateCode() {
 var code = " /** \n" +
     " * Sets the smooth scrolling effect on the fixed header.\n" +
     " */\n\n" +
