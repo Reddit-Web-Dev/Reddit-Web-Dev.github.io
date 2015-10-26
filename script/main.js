@@ -5,18 +5,39 @@
 /**
 * Entry function
 */
-(function($) {
+(function($, RedditFeed) {
     'use strict';
     $(document).ready(initPage);
-})(jQuery);
+})(jQuery, RedditFeed);
 
 /**
 * Main function. Every thing relating to page initialization should go here.
 * Just attach initializing functions to the events you wish here
 */
 function initPage() {
+    // Cache DOM
+    var $reddit = $('.reddit-feed'),
+        $redditFeed = $reddit.find('.feed'),
+        $redditButtons = $reddit.find('.subreddits'),
+        $firstRedditButton = $redditButtons.find('button').first();
+
+    // Init functions
     $(document).scroll(setScrollEffectHeader);
     animateCode();
+    $firstRedditButton.addClass('active');
+    RedditFeed.fetchNewPosts($redditFeed, $firstRedditButton.text(), 5);
+
+    // Event binding
+    $redditButtons.on('click', '.subreddit-button', function() {
+        var $this = $(this);
+
+        $redditButtons.children().each(function() {
+            $(this).removeClass('active');
+        });
+        $this.addClass('active');
+
+        RedditFeed.fetchNewPosts($redditFeed, $this.text(), 5);
+    });
 }
 
 /**
