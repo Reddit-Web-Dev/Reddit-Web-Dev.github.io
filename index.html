@@ -10,6 +10,8 @@
         <!-- <link rel="icon" type="image/png" href="favicon.png?v=2"> -->
         <link rel="stylesheet" href="style/reset.css">
         <link rel="stylesheet" href="style/main.css">
+        <link rel="stylesheet" href="style/code-animation.css">
+        <link rel="stylesheet" href="style/reddit-feed.css">
 
         <!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -32,7 +34,7 @@
                 </nav>
             </div>
         </div>
-        
+
         <header>
             <div class="nav-container">
                 <div class="center">
@@ -67,7 +69,7 @@
                     <div class="osx-button close"></div>
                     <div class="osx-button minify"></div>
                     <div class="osx-button fullscreen"></div>
-                    <div class="window-title">MyCodeEditor – My next big project.js</div>
+                    <div class="window-title">SublimeCodePad++ – motivator.js</div>
                 </div>
                 <div class="code-area"></div>
             </div>
@@ -143,6 +145,21 @@
                     </ul>
                 </div>
             </section>
+
+            <section class="reddit-section">
+                <h2 class="title">Stay up to date</h2>
+                <p class="subtitle">Reddit is a great community for all kind of developers, below we choose a few of the many subreddits that might help you learn something new.</p>
+                <div class="reddit-feed">
+                    <div class="subreddits">
+                        <button class="subreddit-button">webdev</button>
+                        <button class="subreddit-button">web_design</button>
+                        <button class="subreddit-button">dailyprogrammer</button>
+                        <button class="subreddit-button">learnprogramming</button>
+                        <button class="subreddit-button">programming</button>
+                    </div>
+                    <ul class="feed"></ul>
+                </div>
+            </section>
         </main>
 
         <footer>
@@ -151,6 +168,8 @@
 
         <!-- jQuery -->
         <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-        <script type="text/javascript" src="script/main.js"></script>
+        <script src="script/code-animation.js"></script>
+        <script src="script/reddit-feed.js"></script>
+        <script src="script/main.js"></script>
     </body>
 </html>

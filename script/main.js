@@ -5,18 +5,40 @@
 /**
 * Entry function
 */
-(function($) {
+(function($, CodeAnimation, RedditFeed) {
     'use strict';
     $(document).ready(initPage);
-})(jQuery);
+})(jQuery, CodeAnimation, RedditFeed);
 
 /**
 * Main function. Every thing relating to page initialization should go here.
 * Just attach initializing functions to the events you wish here
 */
 function initPage() {
+    // Cache DOM
+    var $reddit = $('.reddit-feed'),
+        $redditFeed = $reddit.find('.feed'),
+        $redditButtons = $reddit.find('.subreddits'),
+        $firstRedditButton = $redditButtons.find('button').first();
+
+    // Init functions
+    CodeAnimation.animateCode();
+    $firstRedditButton.addClass('active');
+    RedditFeed.fetchNewPosts($redditFeed, $firstRedditButton.text(), 5);
+
+    // Event binding
     $(document).scroll(setScrollEffectHeader);
-    animateCode();
+
+    $redditButtons.on('click', '.subreddit-button', function() {
+        var $this = $(this);
+
+        $redditButtons.children().each(function() {
+            $(this).removeClass('active');
+        });
+        $this.addClass('active');
+
+        RedditFeed.fetchNewPosts($redditFeed, $this.text(), 5);
+    });
 }
 
 /**
@@ -48,65 +70,9 @@ function setScrollEffectHeader() {
         $navContainer = $('.nav-container.fixed'),
         headerHeight = $('body > header').height();
 
-        scrollFromTop > headerHeight ? $navContainer.addClass('show') : $navContainer.removeClass('show');
-
-
-}
-
-/**
-* Animates the code inside the SVG window
-*/
-var codeCounter = 1;
-
-function animateCode(){
-var code = " /** \n" +
-    " * Sets the smooth scrolling effect on the fixed header.\n" +
-    " */\n\n" +
-    "function setScrollEffectHeader() {\n" +
-    "  var scrollFromTop = $(this).scrollTop(),\n" +
-    "  $navContainer = $('header .nav-container');\n\n" +
-    "  console.log(scrollFromTop);\n\n" +
-    "  if (scrollFromTop > 470) {\n" +
-    "    $navContainer.css('opacity', '0.7');\n" +
-    "  } else if (scrollFromTop > 318) {\n" +
-    "    $navContainer.css('border-bottom', '1px solid #505050');\n" +
-    "  } else {\n" +
-    "    $navContainer.css('opacity', '1');\n" +
-    "    $navContainer.css('border-bottom', '0px');\n" +
-    "  }\n" +
-    "}",
-    $codeContainer = $('.code-area'),
-    codeWords = code.split(' '),
-    codeHighlight = '<span class="code-color"></span>',
-    codeKeywords = ['var', 'function', 'if', 'else'],
-    isColor = false;
-
-    if (codeKeywords.indexOf(codeWords[codeCounter]) >= 0) {
-        $codeContainer.append(codeHighlight);
-        $codeContainer = $('.code-area span:last-child');
-        isColor = true;
-    }
-
-    setTimeout(function() {
-        typeCharacter($codeContainer, (' ' + codeWords[codeCounter]), 0, isColor, (codeWords.length - 1));
-    }, 50);
-}
-
-/**
-* Simulates the text being typed
-*/
-function typeCharacter($element, word, index, isColor, length) {
-    if (typeof word[index] === 'undefined') {
-        if (codeCounter !== length) {
-            codeCounter++;
-            animateCode();
-        } else {
-            clearTimeout(); // Stop animation
-        }
+    if (scrollFromTop > headerHeight) {
+        $navContainer.addClass('show');
     } else {
-        $element.html($element.html() + word[index]);
-        setTimeout(function() {
-            typeCharacter($element, word, ++index, isColor, length);
-        }, 50);
+        $navContainer.removeClass('show');
     }
 }
