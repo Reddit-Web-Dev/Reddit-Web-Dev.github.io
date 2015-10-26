@@ -17,19 +17,6 @@
 function initPage() {
     $(document).scroll(setScrollEffectHeader);
     animateCode();
-    getStartedAnchorSmoothScroll();
-}
-
-/**
- * Sets a smooth transition to the developer profiles when the user click the
- * button "Get Started!"
- */
-function getStartedAnchorSmoothScroll() {
-    $("a.start").click(function() {
-        $('html, body').animate({
-            scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
-        }, 650);
-    });
 }
 
 /**
@@ -62,6 +49,7 @@ function setScrollEffectHeader() {
         headerHeight = $('body > header').height();
 
         scrollFromTop > headerHeight ? $navContainer.addClass('show') : $navContainer.removeClass('show');
+
 
 }
 
