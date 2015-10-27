@@ -1,0 +1,11 @@
+section.reddit-section
+    h2.title Stay up to date
+    p.subtitle Reddit is a great community for all kind of developers, below we choose a few of the many subreddits that might help you learn something new.
+    .reddit-feed
+        .subreddits
+            - each button in ['webdev', 'web_design', 'dailyprogrammer', 'learnprogramming', 'programming']
+                button.subreddit-button #{button}
+        ul.feed
+        .overlay
+            .load-bar
+                .loading

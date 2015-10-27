@@ -1,0 +1,23 @@
+mixin nav-link(text, url)
+    li
+        a(href="#{url}") #{text}
+
+.nav-container
+    .center
+        #logo
+            a(href="index.html") LOGO
+        nav
+            ul
+                +nav-link('GitHub', 'https://github.com/Reddit-Web-Dev/Reddit-Web-Dev.github.io')
+                +nav-link('/r/webdev', 'https://www.reddit.com/r/webdev')
+                +nav-link('Join us on Slack!', 'http://reddit-webdev-slack.herokuapp.com/')
+
+.nav-container.fixed
+    .center
+        #logo
+            a(href="index.html") LOGO
+        nav
+            ul
+                +nav-link('GitHub', 'https://github.com/Reddit-Web-Dev/Reddit-Web-Dev.github.io')
+                +nav-link('/r/webdev', 'https://www.reddit.com/r/webdev')
+                +nav-link('Join us on Slack!', 'http://reddit-webdev-slack.herokuapp.com/')

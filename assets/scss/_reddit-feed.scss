@@ -17,6 +17,7 @@
     padding: 0 1rem;
 }
 .reddit-feed {
+    position: relative;
     background-color: white;
     border-radius: 5px;
     overflow: hidden;
@@ -31,14 +32,14 @@
     flex-grow: 1;
     background: none;
     border: 0;
-    border-bottom: 5px solid transparent;
+    border-bottom: 4px solid transparent;
     color: rgba(0, 0, 0, 0.4);
     line-height: 80px;
     cursor: pointer;
 }
 .reddit-feed .subreddits .subreddit-button:hover,
 .reddit-feed .subreddits .subreddit-button:focus {
-    background-color: #F8F8F8;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
     border-color: #0582C9;
     color: black;
     outline: none;
@@ -71,7 +72,7 @@
     flex-grow: 1;
     padding-left: 15px;
 }
-.reddit-feed .feed a{
+.reddit-feed .feed a {
     text-decoration: none;
 }
 .reddit-feed .feed .tread-content .tread-title {
@@ -95,13 +96,48 @@
     color: #0582C9;
     font-weight: 600;
 }
-.reddit-feed .feed .external-link{
+.reddit-feed .feed .external-link {
     padding: 30px;
 }
-.reddit-feed .feed .external-link .button{
+.reddit-feed .feed .external-link .button {
     margin: 0 auto;
     width: 360px;
     background-color: #0582C9;
+}
+
+.reddit-feed .overlay {
+    background-color: rgba(255, 255, 255, 0.5);
+    display: none;
+    align-items: flex-start;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.reddit-feed .overlay.active {
+    display: flex;
+}
+.reddit-feed .overlay .load-bar {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+}
+.reddit-feed .overlay .load-bar .loading {
+    content: ' ';
+    display: inline;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 50%;
+    text-align: center;
+    background-color: #e74c3c;
+    animation: loading-animation 1s linear infinite;
+}
+@keyframes loading-animation {
+    from {left: 50%; width: 0;}
+    50% {left: 0; width: 100%;}
+    to {left: 0; width: 100%;}
 }
 
 @media all and (max-width: 540px) {
@@ -117,11 +153,14 @@
         width: 50px;
         height: 50px;
     }
-    .reddit-feed .feed .external-link{
+    .reddit-feed .feed .external-link {
         padding: 0;
     }
-    .reddit-feed .feed .external-link .button{
+    .reddit-feed .feed .external-link .button {
         width: 100%;
         font-size: 14px;
+    }
+    .reddit-feed .overlay {
+        top: 100px;
     }
 }

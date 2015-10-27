@@ -19,6 +19,7 @@ function initPage() {
     var $reddit = $('.reddit-feed'),
         $redditFeed = $reddit.find('.feed'),
         $redditButtons = $reddit.find('.subreddits'),
+        $redditLoader = $reddit.find('.overlay'),
         $firstRedditButton = $redditButtons.find('button').first();
 
     // Init functions
@@ -28,7 +29,7 @@ function initPage() {
 
     // Event binding
     $(document).scroll(setScrollEffectHeader);
-    getStartedAnchorSmoothScroll();
+    $("a.start").on('click', smoothScroll);
     $redditButtons.on('click', '.subreddit-button', function() {
         var $this = $(this);
 
@@ -37,20 +38,23 @@ function initPage() {
         });
         $this.addClass('active');
 
-        RedditFeed.fetchNewPosts($redditFeed, $this.text(), 5);
+        $redditLoader.addClass('active');
+
+        RedditFeed.fetchNewPosts($redditFeed, $this.text(), 5, function() {
+            $redditLoader.removeClass('active');
+            $redditFeed.animate({ scrollTop: 0 }, 500);
+        });
     });
 }
 
 /**
- * Sets a smooth transition to the developer profiles when the user click the
- * button "Get Started!"
- */
-function getStartedAnchorSmoothScroll() {
-    $("a.start").click(function() {
-        $('html, body').animate({
-            scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
-        }, 650);
-    });
+* Sets a smooth transition
+*/
+function smoothScroll() {
+    console.log($.attr(this, 'href'));
+    $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top - 100
+    }, 650);
 }
 
 /**
@@ -78,13 +82,13 @@ function setScrollEffectHeader() {
 
     scrollFromTop > 900 ? $navContainer.addClass('shrink') : $navContainer.removeClass('shrink');*/
 
-     var scrollFromTop = $(this).scrollTop(),
-         $navContainer = $('.nav-container.fixed'),
-         headerHeight = $('body > header').height();
+    var scrollFromTop = $(this).scrollTop(),
+        $navContainer = $('.nav-container.fixed'),
+        headerHeight = $('body > header').height();
 
-        if (scrollFromTop > headerHeight) {
-            $navContainer.addClass('show');
-        } else {
-            $navContainer.removeClass('show');
-        }
+    if (scrollFromTop > headerHeight) {
+        $navContainer.addClass('show');
+    } else {
+        $navContainer.removeClass('show');
+    }
 }
