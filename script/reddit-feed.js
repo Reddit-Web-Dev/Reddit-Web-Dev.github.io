@@ -6,7 +6,7 @@ var RedditFeed = (function($) {
     /**
     * Gets the data from reddit with an AJAX request
     */
-    function getRedditFeed($element, subreddit, limit) {
+    function getRedditFeed($element, subreddit, limit, callback) {
         // Error if no jQuery element is passed as container
         if (!($element instanceof jQuery)) {
             throw Error('You must specify a jQuery object to use as container for the posts. Current value: ' + $element);
@@ -47,14 +47,14 @@ var RedditFeed = (function($) {
         }
 
         function handleSuccess(data, text, xhr) {
-            render($element, data);
+            render($element, data, callback);
         }
     }
 
     /**
     * Renders the data coming from reddit to a jQuery element
     */
-    function render($element, data) {
+    function render($element, data, callback) {
         var threads = data.data.children,
             output = '',
             i;
@@ -104,6 +104,10 @@ var RedditFeed = (function($) {
         }
 
         $element.html(output);
+
+        if (typeof callback === 'function') {
+            callback();
+        }
 
         function pad(num) {
             return num < 10 ? '0' + num : num;

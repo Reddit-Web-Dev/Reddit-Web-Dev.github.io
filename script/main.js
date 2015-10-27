@@ -37,7 +37,9 @@ function initPage() {
         });
         $this.addClass('active');
 
-        RedditFeed.fetchNewPosts($redditFeed, $this.text(), 5);
+        RedditFeed.fetchNewPosts($redditFeed, $this.text(), 5, function() {
+            $redditFeed.animate({ scrollTop: 0 }, 500);
+        });
     });
 }
 
