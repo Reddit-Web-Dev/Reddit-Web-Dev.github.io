@@ -72,7 +72,7 @@
     flex-grow: 1;
     padding-left: 15px;
 }
-.reddit-feed .feed a{
+.reddit-feed .feed a {
     text-decoration: none;
 }
 .reddit-feed .feed .tread-content .tread-title {
@@ -96,10 +96,10 @@
     color: #0582C9;
     font-weight: 600;
 }
-.reddit-feed .feed .external-link{
+.reddit-feed .feed .external-link {
     padding: 30px;
 }
-.reddit-feed .feed .external-link .button{
+.reddit-feed .feed .external-link .button {
     margin: 0 auto;
     width: 360px;
     background-color: #0582C9;
@@ -163,11 +163,14 @@
         width: 50px;
         height: 50px;
     }
-    .reddit-feed .feed .external-link{
+    .reddit-feed .feed .external-link {
         padding: 0;
     }
-    .reddit-feed .feed .external-link .button{
+    .reddit-feed .feed .external-link .button {
         width: 100%;
         font-size: 14px;
+    }
+    .reddit-feed .overlay {
+        top: 100px;
     }
 }
