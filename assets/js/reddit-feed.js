@@ -81,8 +81,8 @@ var RedditFeed = (function($) {
             createdAt = dateValues[1] + ' ' + pad(dateValues[2]) + ', ' + dateValues[0] + ' at ' + pad(dateValues[3]) + ':' + pad(dateValues[4]);
 
             // If the thumbnail is not available we replace it with a placeholder
-            if (!thumbnail || thumbnail === 'self' || thumbnail === 'default') {
-                thumbnail = '/images/reddit-placeholder.jpg';
+            if(!thumbnail || thumbnail === 'self' || thumbnail === 'default') {
+                thumbnail = 'assets/images/reddit-placeholder.jpg';
             }
 
             output +=   '<li class="tread">' +
