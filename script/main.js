@@ -19,6 +19,7 @@ function initPage() {
     var $reddit = $('.reddit-feed'),
         $redditFeed = $reddit.find('.feed'),
         $redditButtons = $reddit.find('.subreddits'),
+        $redditLoader = $reddit.find('.overlay'),
         $firstRedditButton = $redditButtons.find('button').first();
 
     // Init functions
@@ -37,7 +38,10 @@ function initPage() {
         });
         $this.addClass('active');
 
+        $redditLoader.addClass('active');
+
         RedditFeed.fetchNewPosts($redditFeed, $this.text(), 5, function() {
+            $redditLoader.removeClass('active');
             $redditFeed.animate({ scrollTop: 0 }, 500);
         });
     });
