@@ -29,7 +29,7 @@ function initPage() {
 
     // Event binding
     $(document).scroll(setScrollEffectHeader);
-
+    getStartedAnchorSmoothScroll();
     $redditButtons.on('click', '.subreddit-button', function() {
         var $this = $(this);
 
@@ -44,6 +44,18 @@ function initPage() {
             $redditLoader.removeClass('active');
             $redditFeed.animate({ scrollTop: 0 }, 500);
         });
+    });
+}
+
+/**
+ * Sets a smooth transition to the developer profiles when the user click the
+ * button "Get Started!"
+ */
+function getStartedAnchorSmoothScroll() {
+    $("a.start").click(function() {
+        $('html, body').animate({
+            scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+        }, 650);
     });
 }
 
@@ -72,13 +84,13 @@ function setScrollEffectHeader() {
 
     scrollFromTop > 900 ? $navContainer.addClass('shrink') : $navContainer.removeClass('shrink');*/
 
-    var scrollFromTop = $(this).scrollTop(),
-        $navContainer = $('.nav-container.fixed'),
-        headerHeight = $('body > header').height();
+     var scrollFromTop = $(this).scrollTop(),
+         $navContainer = $('.nav-container.fixed'),
+         headerHeight = $('body > header').height();
 
-    if (scrollFromTop > headerHeight) {
-        $navContainer.addClass('show');
-    } else {
-        $navContainer.removeClass('show');
-    }
+        if (scrollFromTop > headerHeight) {
+            $navContainer.addClass('show');
+        } else {
+            $navContainer.removeClass('show');
+        }
 }
