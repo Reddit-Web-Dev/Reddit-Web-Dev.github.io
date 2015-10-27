@@ -1,3 +1,7 @@
+@import 'reset';
+
+// TODO: Now that we have it modularized, we can refactor this .scss code
+
 /**** GENERAL ****/
 *,
 *::before,
@@ -332,3 +336,6 @@ footer {
 @media all and (max-width: 720px) {
 
 }
+
+@import 'code-animation';
+@import 'reddit-feed';
