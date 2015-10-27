@@ -8,7 +8,7 @@ var RedditFeed = (function($) {
     */
     function getRedditFeed($element, subreddit, limit) {
         // Error if no jQuery element is passed as container
-        if(!($element instanceof jQuery)) {
+        if (!($element instanceof jQuery)) {
             throw Error('You must specify a jQuery object to use as container for the posts. Current value: ' + $element);
         }
 
@@ -59,7 +59,7 @@ var RedditFeed = (function($) {
             output = '',
             i;
 
-        for(i=0; i<threads.length; i++) {
+        for (i=0; i<threads.length; i++) {
             var td = threads[i].data,
                 sub         = td.subreddit,
                 author      = td.author,
@@ -81,7 +81,7 @@ var RedditFeed = (function($) {
             createdAt = dateValues[1] + ' ' + pad(dateValues[2]) + ', ' + dateValues[0] + ' at ' + pad(dateValues[3]) + ':' + pad(dateValues[4]);
 
             // If the thumbnail is not available we replace it with a placeholder
-            if(!thumbnail || thumbnail === 'self' || thumbnail === 'default') {
+            if (!thumbnail || thumbnail === 'self' || thumbnail === 'default') {
                 thumbnail = '/images/reddit-placeholder.jpg';
             }
 
@@ -98,7 +98,7 @@ var RedditFeed = (function($) {
                             '</div>' +
                         '</li>';
 
-            if(i === threads.length-1){
+            if (i === threads.length-1) {
                 output += '<li class="external-link"><a class="button" href="https://www.reddit.com/r/' + sub + '">See more at /r/' + sub + '</a></li>';
             }
         }
