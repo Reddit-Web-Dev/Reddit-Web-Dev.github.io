@@ -1,0 +1,19 @@
+{
+  "name": "reddit-wed-dev",
+  "version": "1.0.0",
+  "description": "The main website for the /r/webdev beginners community",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Reddit-Web-Dev/Reddit-Web-Dev.github.io"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Reddit-Web-Dev/Reddit-Web-Dev.github.io/issues"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.0.4"
+  }
+}
