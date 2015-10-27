@@ -1,0 +1,15 @@
+mixin header-button(text, url, className)
+    a(href="#{url}" class="#{className} button")
+        span #{text}
+
+header
+    section.intro-lockup
+        .intro-content
+            h1 Welcome to RedditWebDev
+            h2 A catalogue of useful resources for budding developers!
+
+            .intro-btn-lockup
+                +header-button('Join us on Slack!', 'http://reddit-webdev-slack.herokuapp.com/', 'slack')
+                +header-button('Get Started!', '#profiles', 'start')
+    
+    include _osx-window

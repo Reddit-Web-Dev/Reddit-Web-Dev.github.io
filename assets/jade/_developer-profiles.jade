@@ -1,0 +1,20 @@
+mixin developer-card(title)
+    li
+        header
+            img(src="http://placehold.it/195x120", alt="")
+            h2 #{title}
+
+        .profile-body
+            ul.profile-skills
+                - for(var i=0; i<4; i++)
+                    li Consectetur adipisicing elit, sed do eiusmod tempor.
+
+        footer
+            a(href="#").button.learn Start Learning
+
+section#profiles
+    .container
+        ul.profile-wrapper
+            +developer-card('Beginner')
+            +developer-card('Intermediate')
+            +developer-card('Professional')

@@ -82,7 +82,7 @@ var RedditFeed = (function($) {
 
             // If the thumbnail is not available we replace it with a placeholder
             if(!thumbnail || thumbnail === 'self' || thumbnail === 'default') {
-                thumbnail = 'assets/images/reddit-placeholder.jpg';
+                thumbnail = 'images/reddit-placeholder.jpg';
             }
 
             output +=   '<li class="tread">' +
