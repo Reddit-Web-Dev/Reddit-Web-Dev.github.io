@@ -108,8 +108,7 @@
 .reddit-feed .overlay {
     background-color: rgba(255, 255, 255, 0.5);
     display: none;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
     position: absolute;
     top: 80px;
     right: 0;
@@ -119,35 +118,26 @@
 .reddit-feed .overlay.active {
     display: flex;
 }
-.reddit-feed .overlay .loader-container {
-    width: 72px;
-    height: 72px;
-    padding: 16px;
-    border-radius: 50%;
+.reddit-feed .overlay .load-bar {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+}
+.reddit-feed .overlay .load-bar .loading {
+    content: ' ';
+    display: inline;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 50%;
+    text-align: center;
     background-color: #0582C9;
-    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.3);
+    animation: loading-animation 1s linear infinite;
 }
-.reddit-feed .overlay .loader-container .loader {
-    width: 8px;
-    height: 8px;
-    margin: 16px auto;
-    opacity: 0.5;
-    border-radius: 50%;
-    box-shadow:
-        0 -14px 0 rgba(255, 255, 255, 1),
-        10px -10px 0 rgba(255, 255, 255, 0.9),
-        14px 0px 0 rgba(255, 255, 255, 0.8),
-        10px 10px 0 rgba(255, 255, 255, 0.7),
-        0px 14px 0 rgba(255, 255, 255, 0.6),
-        -10px 10px 0 rgba(255, 255, 255, 0.5),
-        -14px 0px 0 rgba(255, 255, 255, 0.4),
-        -10px -10px 0 rgba(255, 255, 255, 0.3);
-    transform-origin: 50%;
-    animation: load 0.5s steps(8, end) infinite;
-}
-@keyframes load {
-  0% { transform: rotate(0); }
-  100% { transform: rotate(360deg); }
+@keyframes loading-animation {
+    from {left: 50%; width: 0;}
+    50% {left: 0; width: 100%;}
+    to {left: 0; width: 100%;}
 }
 
 @media all and (max-width: 540px) {
