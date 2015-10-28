@@ -27,7 +27,7 @@ gulp.task('html', function(){
     .pipe(jade({
         pretty: config.production ? false : true
     }))
-    .pipe(gulp.dest(config.dest));
+    .pipe(gulp.dest(""));
 });
 
 gulp.task('css', function(){
